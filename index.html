@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Do you love me?</title>
+<style>
+body {
+  background-color: #ffe6f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+.container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+img {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+}
+button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.yes {
+  background-color: #ff6699;
+  color: white;
+}
+.no {
+  background-color: #cccccc;
+}
+.result {
+  margin-top: 20px;
+  font-size: 20px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <img src="https://i.pinimg.com/originals/27/9a/37/279a3784afd830bbdc8c01659a6e7d2d.gif" alt="Bears" id="mainImage">
+  <img src="https://i.pinimg.com/originals/83/72/bf/8372bf545abd268c74ac1bd48f609ce1.gif" alt="Happy Bear" id="happyImage" style="display: none;">
+  <img src="https://media.tenor.com/eMd6i40gETcAAAAj/peach-cat-sad-peach-cry.gif" alt="Sad Bear" id="sadImage" style="display: none;">
+  <h1>你爱我吗?</h1>
+  <button class="yes" onclick="showResult('yes')">Yes</button>
+  <button class="no" onclick="showResult('no')">No</button>
+  <div class="result" id="result"></div>
+</div>
+
+<script>
+function showResult(answer) {
+  const resultDiv = document.getElementById('result');
+  const mainImage = document.getElementById('mainImage');
+  const happyImage = document.getElementById('happyImage');
+  const sadImage = document.getElementById('sadImage');
+
+  if (answer === 'yes') {
+    resultDiv.innerHTML = "好可爱，最喜欢你了😘🥰";
+    mainImage.style.display = 'none';
+    happyImage.style.display = 'block';
+    sadImage.style.display = 'none';
+  } else {
+    resultDiv.innerHTML = "很抱歉你不爱我😭 ";
+    mainImage.style.display = 'none';
+    happyImage.style.display = 'none';
+    sadImage.style.display = 'block';
+  }
+}
+</script>
+
+</body>
+</html>
